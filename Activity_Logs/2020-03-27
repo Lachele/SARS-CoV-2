@@ -52,3 +52,51 @@ directory.
 The visualization state and associated file are in the VMD
 directory and all begin with 'Alignment_of_6lu7-and-doamond-6yb7'.
 
+(from future:  that should be 'diamond' but not changing it now)
+
+1:22 
+
+Committed and pushed the work so far.  Taking a short break.
+
+1:51
+
+Thought about this during the break, of course.
+
+Next step:  isolate the binding site.
+
+I'm going to use the PDB structure because I have a better 
+understanding of how it was generated.  But, from the structural
+alignments, it might not matter a lot.  I also prefer the PDB
+structuure because it has something in the binding site.
+
+I'll start by finding all the residues near the bound ligand. 
+Then, I'll cut off as much of the protein as I can and still 
+have an intact strand that contains the binding site.  
+
+I'll do that for both structures, and then compare.
+
+2:18
+
+I've got an image of the binding site with the ligand.  There 
+is only one water that looks interesting, so I'll keep it and
+let the rest go.  Seeing this in 3D makes a big difference.
+
+The water that looks interesting is resid 416.
+
+Files for this part in the VMD directory start with:
+
+6lu7_binding_region_with_ligand_and_waters
+
+Now to make a couple new PDB files with only these parts.
+
+These files are named:
+
+6lu7_aligned_to_D-6yb7_binding-region.pdb
+6lu7_aligned_to_D-6yb7_ligand-and-HOH416.pdb
+
+The VMD files start with:
+
+6lu7_binding_region_with_ligand_and_waters_TRIMMED
+
+
+
