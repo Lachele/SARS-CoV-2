@@ -99,4 +99,32 @@ The VMD files start with:
 6lu7_binding_region_with_ligand_and_waters_TRIMMED
 
 
+2:41
+
+Committed and pushed the work so far.
+
+From previous work, while I was figuring out how to do all
+this, I already had made lavandulyl acetate in ChemDraw and
+then saved the 3D coordinates. The files are these:
+
+Lavandulyl_acetate.cdxml
+'Chem3D XML in Lavandulyl_acetate.mol2'
+
+For whatever reason, ChemDraw doesn't give the molecule
+(residue) a name and instead just uses 4 stars.  This is
+not useful in more general terms, so I will change it.
+
+This script (in the scripts directory) will convert the
+mol2 file to a pdb file and then will change the name
+of the residue to something useful
+
+Here's an example of how to use it:
+
+bash ../0_Scripts/convert_checmdraw3D_and_set_residue_name.bash Chem3D\ XML\ in\ Lavandulyl_acetate.mol2 Lavandulyl_acetate.pdb  AAA
+
+
+This converts Chem3D\ XML\ in\ Lavandulyl_acetate.mol2 to
+the PDB format file Lavandulyl_acetate.pdb and then it
+changes the name of the residue to AAA.
+
 
