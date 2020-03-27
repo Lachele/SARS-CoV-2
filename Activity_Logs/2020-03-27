@@ -128,3 +128,185 @@ the PDB format file Lavandulyl_acetate.pdb and then it
 changes the name of the residue to AAA.
 
 
+3:02
+
+I now have the new ligand and the PDB file (with its own
+ligand) prepared for use in the virtual reality software.
+
+I will need to transfer the files to the VR headset.
+
+First, though, I'll check the charge on the headset and
+warm up my coffee.
+
+
+3:14
+
+I'm using the SideQuest software to transfer the PDB 
+files onto the Oculus Quest that I'm using for the VR.
+
+I had to use SideQuest to install Nanome in the first
+place, so it already knows how to contact the Quest.
+
+To make the transfer:
+
+1. I connect the Quest from its USB-C port to the USB-C
+port on my laptop.  
+
+2. Make sure the Quest is turned on.
+
+3. I start up SideQuest. On my laptop, it is installed at:
+
+    /home/lachele/Modeling/SideQuest-0.10.2
+
+I cd to that directory and type './sidequest'.
+
+If all goes well, the upper part of the screen looks
+like the image in 
+
+    2020-03-27_03-20-28_SideQuest_Success.png
+
+4. I click on the folder icon.  If I hover my mouse 
+pointer over the icon, the tooltip says:
+
+"Mange files on the headset"
+
+After I click, I get a list of folders.
+
+    2020-03-27_03-24-25_Top-level-folders.png
+
+5.  Navigate like so, by clicking on the relevant icons:
+
+Android -> data -> com.Nanome.NanomeCurie -> files -> Structure
+
+6.  Then, hover over the '+' lower right and then choose
+to "Copy file to this folder" from the menu of icons that
+appears above (or open a file browser for drag-and-drop).
+
+I copy these files onto the headset:
+
+    2_PDBs_Modified/6lu7_aligned_to_D-6yb7_binding-region.pdb
+    2_PDBs_Modified/6lu7_aligned_to_D-6yb7_ligand-and-HOH416.pdb
+    4_ChemDraw_Structures/Lavandulyl_acetate.pdb
+
+See this image for a view when finished:
+
+    2020-03-27_03-32-42_files_transferred.png
+
+6. Now, I put on the headset and start Nanome up.
+
+It's hard to take notes while using the VR headset, so I 
+might not do a good job at it. 
+
+Best I can recall:
+
+* As always, save your workspace often.
+
+* I navigated to the "Strucrure" folder and loaded the
+  three structures from above.  
+
+  Before loading, I left "Align and Lock" selected.
+  If you don't do that, the molecules don't stay in
+  their relative places.  
+
+* Then, I chose to make the protein part a surface
+  because that makes it easier to see the other 
+  molecules.
+
+* I selected the lavendulyl acetate (lav-ace) and 
+  unlocked it from the positions of the others.
+
+* Save often... 
+ 
+  Until repositioning the lav-ace, I left the 
+  workspace as the default name:
+
+  b.lachele.foley 2020-03-27.nanome
+
+  All subsequent saves got numbers appended.  I'm
+  only recording the last one here:
+
+  b.lachele.foley 2020-03-27 (4).nanome
+
+  ...because there isn't a significant difference.
+
+* Then, I moved the lav-ace into the binding site.  
+  For this first pose, I chose the simple route and 
+  overlaid the acetate part from the lav-ace with an
+  ester in the bound ligand from the PDB structure. 
+  This doesn't put it far into the binding site, so
+  I expect it not to stay, but it might.  
+
+* I then deleted the ligand that came with the 
+  structure and combined the lav-ace ligand and
+  the protein (necessary to keep their relative
+  coordinates after download).  
+
+* I saved the workspace with only the combined
+  ligand and protein as:
+
+  lav-ace-1.nanome
+
+  ...where the '1' indicates that I will probably
+  try other poses. 
+
+* These are all saved in the Nanome workspaces folder.
+  There are also a couple of screen shots from the 
+  space.  They are:
+
+  'Nanome - Mar 27 2020 [034611].png' 
+
+        Ligand from PDB file in its binding site.
+        The lav-ace residue is not visible.
+
+
+  'Nanome - Mar 27 2020 [040549].png'
+
+        View from where I had aligned the lav-ace
+        with the bound ligand.  
+
+
+7. Extracting the coordinates requires Windows.  
+
+   * I use Windows in a VM.  Slow.  Very slow for this.
+
+   * First, copy the Nanome workspace of interest to 
+     a location where Windows can see it.
+
+     You only need the workspace, not the files used
+     as input when building the workspace.
+
+     Here, I copied only lav-ace-1.nanome
+
+  * Inside Windows, move the workspace into the
+    Documents folder.
+
+  * Start Nanome on Windows.
+
+  * Navigate to the Documents folder and select the
+    workspace to load (here, lav-ace-1.nanome).
+
+  * Once it loads, from the Entry List menu, choose
+    the 'export' icon and save the file in your
+    favorite format (I choose PDB).  Put it in the
+    Documents folder, too.
+
+    You don't get a choice of filename. This one is:
+
+        Lavandulyl_acetate+6lu7_aligned_to_D-6yb7_binding-region.PDB
+
+  * Copy that file back to a space visible to Linux.
+
+    I put this in the Bound Coordinates folder.
+
+8.  Open the file in VMD to make sure everything looks ok.
+
+    The VMD visualization folder has relevant files
+    beginning with "lav-ace-1"
+
+
+4:54 AM
+
+Next, I will need to turn the PDB output from Nanome into
+something that can be used as input for a simulation.  But,
+first I need sleep.  To be continued.
+
