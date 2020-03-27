@@ -1,0 +1,54 @@
+12:01 AM
+
+I have loaded the two files into VMD and will compare them.
+
+Because the two files are in different orders and contain
+different information, I had trouble aligning in VMD.
+
+The following selection resulted in the alignment that
+convinced me that the proteins were essentially the same.
+
+chain A and resid 7 to 54 56 to 81 83 to 89 91 to 96 98 to 101 103 105 150 to 160 300 to 306
+
+I had also ticked "Backbone" in the VMD trajectory tool.
+
+There is a tail that is very different between the two, so 
+I tried the following selection instead (still'Backbone').
+In this selection, I have also expanded the alignment selection.
+
+chain A and resid 7 to 54 56 to 81 83 to 89 91 to 96 98 to 101 103 105 150 to 160 250 255 260 265 270 275 280 285 290 295 300
+
+This rendered the structures nearly identical, except 
+for the tail as mentioned above.
+
+1:06
+
+That's mostly done now.  See images and VMD visualization 
+state files in the VMD directory.
+
+The image 
+
+	Alignment_of_6lu7-and-doamond-6yb7.png
+
+...is a little busy, but contains lots of information.
+The PDB file is in blue and the Diamond file is in red.
+The backbone is traced with "New Cartoon" using a 
+transparent material so that both can be seen.  
+
+The residues that were used to align the structures are shown 
+in balls and sticks.  Note that the entire residue is shown but
+the alignment was only on the backbone.
+
+The tail that is different between the two (this is not 
+surprising or something that troubles me) is highlighted with
+a glass-like tube.  
+
+The inhibitor from the PDB structure is shown in solid sticks 
+in the binding site.  
+
+The aligned coordinates can be found in the modified PDB 
+directory.  
+
+The visualization state and associated file are in the VMD
+directory and all begin with 'Alignment_of_6lu7-and-doamond-6yb7'.
+

@@ -67,7 +67,7 @@ I am not a physician.  I am also not a biochemist, though I have learned a lot o
 as a side-effect of my job.  
 
 I am an academic Doctor.  That is, I have a PhD in Chemistry and very significant experience 
-in computational chemistry with strong emphasis on glycobiological contexs.
+in computational chemistry with strong emphasis on glycobiological contexts.
 
 Here's a Google Scholar search on me:  
 

@@ -1,0 +1,33 @@
+11:30 PM
+
+For the last hour and a half, I've been working on the organization of
+the information in this repository, on building the organizational
+structure (directories) and adding some README docs and such.
+
+11:35
+
+My next task is to go all the way through my workflow once and document
+the process as I go.  After that, I will go through the process again, 
+trying to follow my documented procedure.  I will refine the documentation
+as needed.
+
+For my first documentation pass, I will try to insert lavandulyl acetate 
+into the binding site of the main protease.  I choose the main protease 
+because of the project described within this post:
+
+https://blog.matryx.ai/an-international-group-of-scientists-needs-your-help-90a90a79bba5
+
+I choose lavandulyl acetate because (1) I like lavender and (2) it is 
+one of the main components in my homemade asthma reliever..
+
+I will periodically run ispell on these work notes.  
+
+11:44
+
+The group mentioned in the post above provide a structure of the apo form
+of the main protease.  I believe that the corresponding entry at rcsb.org
+is PDB ID 6LU7.  It is called '6YB7', but that is not a PDB ID.
+
+First, I will compare the two and reassure myself that they are equivalent
+structures.  I will store the results as a VMD visualization state. 
+
