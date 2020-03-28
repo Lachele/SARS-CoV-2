@@ -1,0 +1,61 @@
+2020-03-28 
+
+========================
+Building the Structure
+========================
+
+When possible, use 
+
+    Structure > Convert Name to Structure
+
+These compounds are all pretty common, so are likely to be in their
+structure library. 
+
+Save it as a regular ChemDraw file.
+
+Also select the structure and use:
+
+    ctrl-alt-C
+
+    ...to copy the structure as SMILES
+
+    and paste that into Notepad or such (and save)
+
+Here is one way to get a 3D strucure from that:
+
+    View > Show Chem3D Hotlink Window
+
+    In the window that pops up, click the icon at lower left.
+    On hover, it should say "Launch Chem3D"
+
+    From the Chem3D Window, 
+
+        File > Save Copy As 
+
+        Save it as a Mol2 file.  
+
+
+Finally, copy the chemdraw file, the mol2 file and the
+file containing the SMILES over to the ChemDraw Structures
+folder in the repo.
+
+
+========================
+Modifying the Structure
+========================
+
+The structure that is generated must be altered and made into
+a PDB file.
+
+If you saved a file 'Structure.mol2' earlier, and if you take a
+look inside, you will find that the residue name is composed of
+stars.  
+
+To fix these issues, cd to the ChemDraw Structures folder and 
+issue a command equivalent to:
+
+bash ../0_Scripts/convert_checmdraw3D_and_set_residue_name.bash Structure.mol2 Structure.pdb ZZZ
+
+Here, your residue will be named 'ZZZ'.  You can change that
+to something else if you prefer.
+

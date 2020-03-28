@@ -1,0 +1,1 @@
+CC(OCC(C/C=C(C)\C)C(C)=C)=O
