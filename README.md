@@ -77,6 +77,20 @@ I'm doing this because I can.  The more scientists who do something, the more li
 find something useful.  To not try feels unethical to me.  I don't have high hopes for this 
 going anywhere, but it's worth a shot.
 
+## Is there any scientific reason to try at all?
+
+I think so.  My collaborator, Jim, has been collecting scientific studies showing 
+anti-viral activity of various essential oil components.  Go look down in the 
+Literature folder for more info.
+
+If you go look, you will see that the mechanisms aren't as detailed as would be 
+desired by someone doing the work I'm doing.  But, they show that there is a 
+possible effect. 
+
+One way to start figuring out the mechanism is just this - put the compounds into
+the various parts of the virion and see what happens.  That's what I'm doing, in 
+the way that I know how.
+
 ## There are others
 
 The main other right now is Jim Grimes, an old friend.  He is helping me find relevant 
