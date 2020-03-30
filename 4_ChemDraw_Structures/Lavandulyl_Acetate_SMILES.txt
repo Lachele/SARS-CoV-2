@@ -1,1 +1,7 @@
+From ChemDraw:
+
 CC(OCC(C/C=C(C)\C)C(C)=C)=O
+
+From Wikipedia:
+
+O=C(OCC(\C(=C)C)C/C=C(/C)C)C
