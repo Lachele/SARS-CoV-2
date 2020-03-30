@@ -98,8 +98,12 @@ literature and information regarding price and availability for the compounds.
 
 ## Funding
 
-This is a side-project for me and is mostly self-funded.  It's not what I get paid for,
-though my boss knows I'm doing it.  I bought the software and the headset myself.  I'll 
-try to run the simulaions on my laptop, though, if I have to, I might take up some unused 
-cores where I work. 
+This began as a side-project for me and was mostly self-funded.  It's not what I normally
+get paid for, though my boss knew I was doing it.  But, recently, the NIH requested that
+scientists prioritize COVID-19 research.  So, now it has become my job to do this sort
+of thing - and to ensure that others can do their research whenever I can. 
+
+I bought the VR software and headset myself.  I'll still try to run the simulations on my 
+laptop, but I will take up unused cores at work when I can.  Others at work are also
+working on COVID-19, and my project is less computationally demanding, so they get first dibs.
 

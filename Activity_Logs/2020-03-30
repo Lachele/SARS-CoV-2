@@ -1,0 +1,93 @@
+2:24 AM
+
+I started working a couple hours ago, but I was mostly doing reading.
+
+My goal tonight is to figure out a good work flow for getting the files
+output from Nanome into shape for simulations.
+
+I might need to nap a little.  Some nights I sleep a little at night;
+some nights I don't. 
+
+The plan:
+
+1.  Figure out a three letter code that is unassigned as a residue name
+    in the wwPDB.  Based on the results, choose a residue name for the
+    molecules that get put into the binding site.
+
+2.  Use that name as the key to grep the Nanome pdb file contents into
+    two separate files, one for the protein and one for the ligand.
+
+3.  Use antechamber to assign atom types and partial charges to the 
+    atoms in the ligand and then to write out a prep file containing
+    that information.
+
+4.  Figure out some efficient way to automatically generate a leap input
+    file to use.  Then write a script to do that and run leap.
+
+5.  Craft a series of minimization files.  
+
+    These are all in the gas phase with a dielectric of 80 (water-ish).
+    I'm choosing the water-ish dielectric based on the notion that the
+    virus particles are likely to be in droplets.  I'll try putting them
+    in explicit waters a little later.  For now, things are quick and 
+    dirty, just to be a little faster.
+
+    Run all of these in sets of 5.  Note that sander's minimization is
+    non-deterministic, so each run will be different, even starting from
+    the same initial coordinates. 
+
+    First, find all the residues that are very close, say 5 A, to the ligand.
+    Call these 'closest'.  Then, find all the ones that are between, say,
+    5 A and 10 A.  Call them 'near'.  Group the remaining residues into 
+    a category called 'far'.  
+
+    1.  Hold everything in 'near' and 'far' still.  Put a restraint on the
+        backbone for the residues in 'closest'.  Hold the ligand still as well.
+
+        Gently minimize.  
+
+        This allows the side-chains to relax around the ligand which makes
+        them less likely to spit it out of the binding site.
+
+    2.  Release the hold on the ligand (only) and minimize again.  Keep the 
+        side-chains unrestrained.
+
+        If the ligand pops out of the binding site, then try another pose 
+        or 3 after trying to figure out what caused the problem.
+
+        If it continues to pop out, give up and move on.
+
+        ....sure, it might be that the backbone needed to move, but for
+        now, just move along.
+
+    3.  If the ligand has stayed put, release the backbone in the closest 
+        region and release the side-chains in the near region.  Keep the 
+        far region restrained at all times. 
+
+6.  For any minimization that works, generate input files for a brief MD
+    simulation in gas phase (dielectric=80 still).  
+
+The execution:
+
+1.  Z01 and Z0Z  (zee-zero-one and zee-zero-zee) both are not used as of today.
+    Gonna use Z0Z.  
+
+2.  I wrote a script to do this.  I tested it on the already-generated files.
+    They used AAA and ZZZ as their ligand residue names.  I changed the names
+    to Z0Z manually in the ligand files after the grep. 
+
+    Example use:
+
+    bash ../0_Scripts/grep_file_parts.bash 6lu7_aligned_to_D-6yb7_binding-region+Eucalyptol.pdb
+
+3.  I wrote a script to do this.  I'm using the AM1-BCC charge calculation method
+    because these are pretty standard organic compounds and should not require much
+    in the way of exotic methods to get reasonable charges.  At least, I hope not.
+
+    Example use:
+
+    bash ../0_Scripts/use_antechamber.bash Lavandulyl_acetate+6lu7_aligned_to_D-6yb7_binding-region.pdb_ligand.pdb
+
+[3:39 AM - taking a break that might resemble a nap, tho I probably can't sleep.]
+
+
