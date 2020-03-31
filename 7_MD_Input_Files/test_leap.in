@@ -1,0 +1,18 @@
+source leaprc.protein.ff14SB
+source leaprc.gaff2
+
+loadamberprep ../6_Bound_Coordinates/test.pdb.prep
+
+m = loadpdb ../6_Bound_Coordinates/test.pdb
+
+check m
+
+n = loadpdb ../6_Bound_Coordinates/Lavandulyl_acetate+6lu7_aligned_to_D-6yb7_binding-region.pdb_protein.pdb
+
+check n
+
+z = combine { m n }
+
+saveamberparm z z.parm7 z.rst7
+
+quit

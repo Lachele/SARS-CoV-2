@@ -2,5 +2,11 @@
 
 RESNAME='Z0Z'
 
-grep ".................${RESNAME}" ${1} > ${1}_ligand.pdb
-grep -v ".................${RESNAME}" ${1} > ${1}_protein.pdb
+if [ "${2}zzz" == "zzz" ] ; then 
+	newPrefix=${1}
+else
+	newPrefix=${2}
+fi
+
+grep ".................${RESNAME}" ${1} > ${newPrefix}_ligand.pdb
+grep -v ".................${RESNAME}" ${1} > ${newPrefix}_protein.pdb

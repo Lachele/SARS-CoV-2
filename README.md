@@ -16,8 +16,11 @@ be effective against SARS-CoV-2.
 
 ## My current approach
 
-This virus is airborne, and it is a respiratory virus.  It is possible to buy disinfectant
-spray for surfaces, but you can't inhale it or spray it into your lungs/sinuses/mouth.
+This virus is apparently NOT airborne, but it can aerosolize, and it is a respiratory 
+virus.  So, I'm looking at ways to attack from the air.  Anything you can do to reduce
+the live virions in or near your body just gives your immune system that much less to 
+do.  It is possible to buy disinfectant spray for surfaces, but you can't inhale it 
+or spray it into your lungs/sinuses/mouth.
 
 But, maybe there are things that we already inhale safely that are damaging to the virus.
 
@@ -60,6 +63,16 @@ The big important problem:  Results here might get misused.  Please don't do tha
 **Please don't take the information here as advice to do - or not do - anything.**
 
 I'm trying to help.  Please don't make me regret that.
+
+## Some less obvious problems
+
+* It is entirely possible that some of these compounds I'm considering are
+  lethal to the virus, but that they don't work by the methods I'm considering.
+  I'm considering inhibition because that's what I already know how to do.
+* The proper method for modeling this sort of system is not obvious.  For example, 
+  I don't know the structural properties of an aerosol drop that contains a
+  virion.  How large?  How many virions/waters per drop?  Are there other 
+  molecules?  I'm doing what I can quickly.  It won't be perfect.
 
 ## Who I am and why I'm doing this
 

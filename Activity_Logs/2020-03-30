@@ -78,7 +78,11 @@ The execution:
 
     Example use:
 
-    bash ../0_Scripts/grep_file_parts.bash 6lu7_aligned_to_D-6yb7_binding-region+Eucalyptol.pdb
+    bash ../0_Scripts/grep_file_parts.bash \
+         6lu7_aligned_to_D-6yb7_binding-region+Eucalyptol.pdb  \
+         ../7_MD_Input_Files/lav-ace-6lu7
+
+    This will generate output files starting with "../7_MD_Input_Files/lav-ace-6lu7".
 
 3.  I wrote a script to do this.  I'm using the AM1-BCC charge calculation method
     because these are pretty standard organic compounds and should not require much
@@ -86,8 +90,37 @@ The execution:
 
     Example use:
 
-    bash ../0_Scripts/use_antechamber.bash Lavandulyl_acetate+6lu7_aligned_to_D-6yb7_binding-region.pdb_ligand.pdb
+    bash ../0_Scripts/use_antechamber.bash lav-ace-6lu7
 
-[3:39 AM - taking a break that might resemble a nap, tho I probably can't sleep.]
+    This should be run from inside the MD_Input_Files directory.
+         
+
+[3:39 AM - break]
+
+8:36 AM
+
+4.  First write a tleap script at all...  
+
+    I have updated info above to reflect notes below.
+
+    *   The filenames are unwieldy.  They need to be made saner in the Bound Coords dir. 
+
+    *   Antechamber doesn't play nicely with atoms that have the same name.  I will
+        need to add numbers to the atom names.  I'll probably just do this by hand 
+        because writing a script will probably take longer.
+
+        This issue is being introduced by ChemDraw.  Ideally, I should add numbers 
+        when I generate the pdb file from the mol2 file. 
+
+        So.... I will do that going forward.  These first two files - eucalyptol
+        and lavandulyl acetate - will have be left as-is, and I'll only change the
+        numbering in the Bound Coords that were grepped out. 
+
+10 AM Group meeting    
+
+Note to self - check for cations in binding sites.  LYS not considered to form these.
+Arginine is more likely.  His is neutral unless acidic.  (this inspired by discussion
+in group meeting though my brain says the info is familiar from before)
+
 
 
