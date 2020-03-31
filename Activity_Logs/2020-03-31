@@ -1,0 +1,24 @@
+2:49 AM 
+
+Mondays and Tuesdays are always a little distracted for me.  I get
+more work done later in the week and on weekends, typically.
+
+I decided to make some changes to the procedure, mostly in terms of
+annotations and filenames - just to make things easier to find.
+
+I keep changing my mind about a script to name atoms uniquely in 
+ligand files.  I am undecided whether it will take less time to just
+change them by hand or to ....  .....  I have glylib.  This is easy.
+I will write code to do it.  Maybe I'll even fix the bug someone 
+reported for the c++ compiles of glylib.
+
+I'll assign a short name to each binding site and each ligand.  If there
+are multiple ligands, each pose will get a number. 
+
+I'll make one tleap input file and use symbolic links so that it knows
+which file to act on.
+
+Each protein/binding site will need a separate set of run control files
+so that the relevant parts of the protein can be restrained.
+
+
