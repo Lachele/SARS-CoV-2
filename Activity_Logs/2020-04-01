@@ -1,0 +1,61 @@
+3:31 AM
+
+I cannot focus on this - or anything - as I would like.  So... if you're
+reading this and want to jump in or get an idea and run with it, go for it.
+
+I want to get all the way through a minimization before working out details
+for the entire protocol.  
+
+First, I need to work out which residues will be closest, near and far.  This
+is a non-trivial exercise.  The problem is that I need to figure out what is
+the binding site - not merely what is near the ligand. 
+
+No better time to start than now.
+
+First possible list of "closest" includes these and some in between:
+
+NOTE:  Residue numbers are as listed in the parm7/rst7 files and 
+not the original numbers in the PDB file.  I'll have to translate 
+back later.
+
+Info) Added new Atoms label THR20:C
+Info) Added new Atoms label THR21:C
+Info) Added new Atoms label THR22:CA
+Info) Added new Atoms label LEU23:N
+
+Info) Added new Atoms label CYS34:N
+Info) Added new Atoms label PRO35:CA
+Info) Added new Atoms label ARG36:N
+Info) Added new Atoms label HIE37:N
+Info) Added new Atoms label VAL38:O
+Info) Added new Atoms label ILE39:O
+Info) Added new Atoms label CYS40:N
+Info) Added new Atoms label THR41:O
+Info) Added new Atoms label MET45:O
+
+
+Info) Added new Atoms label GLY139:C
+Info) Added new Atoms label CYS141:O
+Info) Added new Atoms label GLY142:CA
+Info) Added new Atoms label GLY142:N
+
+Info) Added new Atoms label MET158:O
+Info) Added new Atoms label HIE160:O
+Info) Added new Atoms label MET161:O
+Info) Added new Atoms label GLU162:O
+Info) Added new Atoms label LEU163:CA
+Info) Added new Atoms label GLY166:CA
+Info) Added new Atoms label VAL167:N
+Info) Added new Atoms label ALA169:CA
+Info) Added new Atoms label GLY170:C
+
+Info) Added new Atoms label ASP183:O
+
+
+After visually inspecting the binding site, I decided that these residues
+are the ones that directly form the 'skin' of the binding site:
+
+resid 19 to 23 34 to 42 44 to 46 48 50 114 115 136 to 142 158 to 173 177 to 179 181 to 188
+
+The next layer out will have to wait until tomorrow. 
+

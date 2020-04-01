@@ -26,7 +26,7 @@ The plan:
 
 5.  Craft a series of minimization files.  
 
-    These are all in the gas phase with a dielectric of 80 (water-ish).
+    These are all in the gas phase with a dielectric of 1.
     I'm choosing the water-ish dielectric based on the notion that the
     virus particles are likely to be in droplets.  I'll try putting them
     in explicit waters a little later.  For now, things are quick and 
@@ -65,7 +65,7 @@ The plan:
         far region restrained at all times. 
 
 6.  For any minimization that works, generate input files for a brief MD
-    simulation in gas phase (dielectric=80 still).  
+    simulation in gas phase (dielectric=1 still).  
 
 The execution:
 
