@@ -1,0 +1,10 @@
+lachele@pop-os:~/GLYCAM_Dev_Env/V_2/Web_Data/TESTS/build-minimize$ cat save.mol.minin
+Gas Phase Minimization with Sander and Restraints
+ &cntrl
+  imin = 1, maxcyc = 10000, ncyc = 5000, dt = 0.001 ,
+  ntb = 0, cut = 20.0, ntmin = 1, nscm = 100, dielc = 1 ,
+  ntxo = 1, ntwr = 1, ntwx=500, ntpr=500, 
+  ntr=1, restraint_wt=2.0,
+  restraintmask='!:19-23,34-42,44-46,48,50,114,115,136-142,158-173,177-179,181-188,192'
+ &end 
+
