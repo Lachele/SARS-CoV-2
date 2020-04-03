@@ -285,3 +285,16 @@ initial placement wasn't terrible.
 Stopping here for today.  Tomorrow, MD and then I make an automated and 
 repeatable workflow.
 
+
+10:25 AM 
+
+Meeting ended early, so started work on MD.  
+
+
+11:44 PM
+
+While I slept, I ran a little simulation, in serial, using sander (not fast).  
+I just had to see what would happen.  It's only a ns of simulated time, but 
+the lavender component stayed put.  There are no guarantees it will continue
+to do so, but... hey... at least it didn't just pop out and float off.
+
