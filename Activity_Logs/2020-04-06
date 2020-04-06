@@ -16,4 +16,42 @@ I could try to get a job running while I do that, but experience
 teaches me that I'll just end up throwing it away because I'm trying
 to focus on too much at once. 
 
+7:49 AM
+
+I'm potentially going to have multiple poses for each ligand.  I
+will probably have most ligands be placed in the binding sites of
+at least two of the proteins.  
+
+ASIDE:  I seriously need to spend time getting to know the binding
+sites.  That's a great thing to do while I get the initial set of
+simulations running. 
+
+Back to organization:  For each pose of the ligand, I will want to 
+do multiple runs.  
+
+So...
+
+MD parent directory/
+   ---- protein 1
+        pdb and similar files for the protein
+        MASKS.txt ## for this protein
+        run control files (minX.in, md.in)
+        ---- ligand 1
+             prep files and such that apply to all poses
+             ---- pose 1    
+                  initial structures - pdb, rst, parm
+                  r1_min1.rst7  ## replica 1
+                  ...
+                  rN_min1.rst7  ## replica N
+             ...
+             ---- pose N
+        ...
+        ---- ligand N
+   ...
+   ---- protein N
+        ...  ## etc....
+
+I will leave the very first simulation, which I showed to 
+everyone, in the top directory (the md part only), but I 
+will reorganize all other files.
 
