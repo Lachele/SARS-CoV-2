@@ -1,10 +1,28 @@
-lachele@pop-os:~/GLYCAM_Dev_Env/V_2/Web_Data/TESTS/build-minimize$ cat save.mol.minin
-Gas Phase Minimization with Sander and Restraints
+Gas Phase Minimization with Restraints
  &cntrl
   imin = 1, maxcyc = 10000, ncyc = 5000, dt = 0.001 ,
   ntb = 0, cut = 20.0, ntmin = 1, nscm = 100, dielc = 1 ,
   ntxo = 1, ntwr = 1, ntwx=500, ntpr=500, 
-  ntr=1, restraint_wt=2.0,
-  restraintmask='!:19-23,34-42,44-46,48,50,114,115,136-142,158-173,177-179,181-188'
+  ntr=1, 
  &end 
-
+Restrain the ligand
+2.0
+RES 192
+END
+Lightly restrain carbon-alpha in the binding site
+0.5
+FIND
+CA * * * 
+SEARCH
+RES 18 22 33 41 43 45 47 47 49 49 113 114 135 141 157 172 176 178 180 187
+END
+END
+Restrain all NEAR atoms
+2.0
+RES 12 17 23 27 31 32 42 42 46 46 48 48 50 56 60 62 77 84 98 103 107 112 115 118 121 134 142 144 154 156 173 175 179 179 188 190
+END
+Restrain all FAR atoms
+2.0
+RES 1 11 28 30 57 59 63 76 85 97 104 106 119 120 145 153 191 191
+END
+END
