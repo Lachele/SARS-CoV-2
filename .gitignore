@@ -1,3 +1,6 @@
 *.swp
 *git-ignore-me*
 *mdinfo
+
+# file for specifying local amber info
+0_Scripts/local_amber_info.bash 

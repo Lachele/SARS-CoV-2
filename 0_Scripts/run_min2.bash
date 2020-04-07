@@ -1,18 +1,37 @@
 #!/bin/bash
+##
+## This script is to be run from the 7_MD directory
+## 
 
-export AMBERHOME='/programs/amber-18-with-patches'
-source ${AMBERHOME}/amber.sh
+##
+##  The following code block DOES A LOT 
+##
+##  First, it does a lot of sanity checking.  
+##
+##  It also sets a lot of variables that are used below
+##
+##  Look in the script it loads for more information.
+if [ -e ../0_Scripts/Usage-MD.bash ] ; then
+    . ../0_Scripts/Usage-MD.bash
+else 
+    echo "This script is probably being called from the wrong location. Exiting."
+    exit 1
+fi
 
-SANDER='sander -O '
-
-${SANDER} \
--i second_min.in \
--o ${1}_min2.out \
--p ${1}.parm7 \
--c ${1}_min1.rst7 \
--ref ${1}_min1.rst7 \
--x ${1}_min2.nc \
--r ${1}_min2.rst7
-
-
-
+MDEngine='sander'
+Overwrite=' -O '
+RunControl="${ProtDir}/second_min.in"
+PosePath="${ProtDir}/${LigDir}/pose${PoseID}"
+Prmtop="${PosePath}/complex.parm7"
+ReplicaPath="${PosePath}/r_${ReplicaID}"
+InputCoord="${ReplicaPath}_min1.rst7"
+Restart="${ReplicaPath}_min2.rst7"
+MDOutput="${ReplicaPath}_min2.out"
+Trajectory="${ReplicaPath}_min2.nc"
+MDInfo="${ReplicaPath}_min2.info"
+if [ -e ../0_Scripts/Build-MD-Exec.bash ] ; then
+    . ../0_Scripts/Build-MD-Exec.bash
+else 
+    echo "Cannot find the executable-generating script."
+    exit 1
+fi

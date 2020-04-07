@@ -55,3 +55,12 @@ I will leave the very first simulation, which I showed to
 everyone, in the top directory (the md part only), but I 
 will reorganize all other files.
 
+
+11:47 PM
+
+First, I need to figure out how to write the sripts so that
+they will be automated.  I think I will require that the scripts
+relevant to MD must be called from the 7_MD directory at the
+top level.  I will try to keep this procedure consistent across
+the repository in any places where consistency isn't annoying.
+
