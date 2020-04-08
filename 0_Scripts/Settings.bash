@@ -7,8 +7,10 @@
 ## Default values
 AMBERHOME='/programs/amber'
 MPI_Prefix='mpirun -np 4 '
-MININIZATION_MDEngine='pmemd.MPI'
-PRODUCTION_MDEngine='pmemd.MPI'
+GP_MINIMIZATION_MDEngine='sander.MPI'
+GP_PRODUCTION_MDEngine='sander.MPI'
+Sol_MINIMIZATION_MDEngine='pmemd.MPI'
+Sol_PRODUCTION_MDEngine='pmemd.MPI'
 
 if [ -e ../0_Scripts/local_settings.bash ] ; then
   . ../0_Scripts/local_settings.bash  ## you can change AMBERHOME in here

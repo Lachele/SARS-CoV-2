@@ -18,18 +18,18 @@ else
     exit 1
 fi
 
-MDEngine="$MINIMIZATION_MDEngine"
+MDEngine="${GP_MINIMIZATION_MDEngine}"
 Overwrite=' -O '
-RunControl="${ProtDir}/first_min.in"
+RunControl="${ProtDir}/second_min.in"
 PosePath="${ProtDir}/${LigDir}/pose${PoseID}"
 Prmtop="${PosePath}/complex.parm7"
-InputCoord="${PosePath}/complex.rst7"
 ReplicaPath="${PosePath}/r_${ReplicaID}"
-Restart="${ReplicaPath}_min1.rst7"
-MDOutput="${ReplicaPath}_min1.out"
-Trajectory="${ReplicaPath}_min1.nc"
-MDInfo="${ReplicaPath}_min1.info"
-
+InputCoord="${ReplicaPath}_GP_min1.rst7"
+Restart="${ReplicaPath}_GP_min2.rst7"
+MDOutput="${ReplicaPath}_GP_min2.out"
+Trajectory="${ReplicaPath}_GP_min2.nc"
+MDInfo="${ReplicaPath}_GP_min2.info"
+MDLog="${ReplicaPath}_GP_min2.log"
 if [ -e ../0_Scripts/Build-MD-Exec.bash ] ; then
     . ../0_Scripts/Build-MD-Exec.bash
 else 

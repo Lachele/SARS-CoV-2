@@ -2,7 +2,6 @@
 ##
 ## This script is to be run from the 7_MD directory
 ## 
-
 ##
 ##  The following code block DOES A LOT 
 ##
@@ -18,17 +17,18 @@ else
     exit 1
 fi
 
-MDEngine='sander'
+MDEngine="${GP_PRODUCTION_MDEngine}"
 Overwrite=' -O '
-RunControl="${ProtDir}/second_min.in"
+RunControl="${ProtDir}/gas-phase-MD.in"
 PosePath="${ProtDir}/${LigDir}/pose${PoseID}"
 Prmtop="${PosePath}/complex.parm7"
 ReplicaPath="${PosePath}/r_${ReplicaID}"
-InputCoord="${ReplicaPath}_min1.rst7"
-Restart="${ReplicaPath}_min2.rst7"
-MDOutput="${ReplicaPath}_min2.out"
-Trajectory="${ReplicaPath}_min2.nc"
-MDInfo="${ReplicaPath}_min2.info"
+InputCoord="${ReplicaPath}_GP_min3.rst7"
+Restart="${ReplicaPath}_GP_MD.rst7"
+MDOutput="${ReplicaPath}_GP_MD.out"
+Trajectory="${ReplicaPath}_GP_MD.nc"
+MDInfo="${ReplicaPath}_GP_MD.info"
+MDLOG="${ReplicaPath}_GP_MD.log"
 if [ -e ../0_Scripts/Build-MD-Exec.bash ] ; then
     . ../0_Scripts/Build-MD-Exec.bash
 else 
