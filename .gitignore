@@ -4,3 +4,4 @@
 
 # file for specifying local amber info
 0_Scripts/local_amber_info.bash 
+0_Scripts/local_settings.bash 

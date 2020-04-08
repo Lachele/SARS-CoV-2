@@ -18,7 +18,7 @@ else
     exit 1
 fi
 
-MDEngine='sander'
+MDEngine="$MINIMIZATION_MDEngine"
 Overwrite=' -O '
 RunControl="${ProtDir}/first_min.in"
 PosePath="${ProtDir}/${LigDir}/pose${PoseID}"

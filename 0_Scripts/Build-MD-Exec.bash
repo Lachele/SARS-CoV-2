@@ -11,6 +11,11 @@
 ##
 
 ## Check to see if the things we need are defined
+if [ "${MPI_Prefix}zzz" == "zzz" ] ; then
+	use_mpi="false"
+else
+	use_mpi="true"
+fi
 if [ "${MDEngine}zzz" == "zzz" ] ; then
         echo "Error: MD Engine must be defined" >&2; exit 1
 else
@@ -21,6 +26,16 @@ else
 			use_logfile="true";;
 		*)
                         echo "Error: MD Engine unknown." >&2; exit 1;;
+	esac
+	case ${MDEngine} in 
+		'sander' | 'pmemd' | 'pmemd.cuda' )
+			use_mpi="false";;
+		'sander.MPI' | 'pmemd.MPI' | 'pmemd.cuda.MPI' ) 
+			if [ "${use_mpi}" == "false" ] ; then
+                            echo "Error: MPI executable called without MPI Prefix." >&2; exit 1
+			fi;;
+		*)
+                        echo "This should not happen, but: Error: MD Engine unknown." >&2; exit 1;;
 	esac
 fi
 if [ "${Overwrite}zzz" == "zzz" ] ; then
@@ -81,6 +96,10 @@ COMMAND="${MDEngine} ${Overwrite} \
 if [ "${use_logfile}" == "true" ] ; then 
 	COMMAND="${COMMAND} \
 -l ${MDLog} "
+fi
+
+if [ "${use_mpi}" == "true" ] ; then 
+	COMMAND="${MPI_Prefix} ${COMMAND} "
 fi
 
 echo """

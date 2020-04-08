@@ -3,7 +3,7 @@ Gas Phase Minimization with Restraints
   imin = 1, maxcyc = 10000, ncyc = 5000, dt = 0.001 ,
   ntb = 0, cut = 20.0, ntmin = 1, nscm = 100, dielc = 1 ,
   ntxo = 1, ntwr = 1, ntwx=500, ntpr=500, 
-  ntr=1, 
+  ntr=1, ig=-1,
  &end 
 Restrain the ligand
 2.0

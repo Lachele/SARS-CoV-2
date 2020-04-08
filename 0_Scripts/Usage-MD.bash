@@ -1,18 +1,5 @@
 #!/bin/bash
 
-AMBERHOME='/programs/amber-18-with-patches'
-if [ -e ../0_Scripts/local_amber_info.bash ] ; then
-  . ../0_Scripts/local_amber_info.bash  ## you can change AMBERHOME in here
-fi
-if [ -e "${AMBERHOME}" ] ; then
-    source ${AMBERHOME}/amber.sh
-else
-	echo "Cannot find AMBERHOME on this device.  Exiting."
-	echo "AMBERHOME is set to:
-    ${AMBERHOME}"
-	exit 1
-fi
-
 ## Usage statement for the MD scripts in general
 
 USAGE="""
@@ -34,6 +21,13 @@ Usage:
 	ReplicaID = The replica descriptor for this run
 
 """
+
+if [ -e ../0_Scripts/Settings.bash ] ; then
+  . ../0_Scripts/Settings.bash  ## AMBERHOME is set in here
+else 
+  echo "Cannot find settings file. Exiting."; exit 1
+fi
+
 MissingProtDirText="""
 
 Must supply the name of the protein directory.
@@ -54,7 +48,6 @@ MissingReplicaIDText="""
 Must supply the descriptor for the replica.
 
 """
-IntegerRE='^[0-9]+$'
 if [ "${1}zzz" == "zzz" ] ; then
 	echo "${MissingProtDirText} ${USAGE}"
 	exit 1
