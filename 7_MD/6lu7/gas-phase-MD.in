@@ -1,0 +1,31 @@
+Gas Phase MD with Sander, SHAKE and Restraints
+ &cntrl
+  imin = 0, irest=0, ntx=1, 
+  ntt=3, temp0=300.0, gamma_ln=5.0, ntp=0, ig=-1,
+  dt = 0.002, ntc=2, ntf=2, nstlim=500000,
+  ntb = 0, cut = 20.0, ntmin = 1, nscm = 100, dielc = 1 ,
+  ntxo = 1, ntwr = 1, ntwx=1000, ntpr=500, 
+  ntr=1, 
+ &end 
+Lightly restrain carbon-alpha in the binding site
+0.5
+FIND
+CA * * * 
+SEARCH
+RES 18 22 33 41 43 45 47 47 49 49 113 114 135 141 157 172 176 178 180 187
+END
+END
+Restrain carbon-alpha in NEAR atoms
+2.0
+FIND
+CA * * * 
+SEARCH
+RES 12 17 23 27 31 32 42 42 46 46 48 48 50 56 60 62 77 84 98 103 107 112 115 118 121 134 142 144 154 156 173 175 179 179 188 190
+END
+END
+Restrain all FAR atoms
+2.0
+RES 1 11 28 30 57 59 63 76 85 97 104 106 119 120 145 153 191 191
+END
+END
+
