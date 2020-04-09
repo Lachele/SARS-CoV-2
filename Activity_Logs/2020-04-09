@@ -71,7 +71,7 @@ On second thought, I'll do these tasks:
     Right now, at about 2h total run time, they're getting 2.5 ns/day.
     So, it's not worth killing them.  And, maybe they'll speed up a little.
 
-3.  Start an install of Amber 18 for use on Hoar.  I'm putting it into
+2.  Start an install of Amber 18 for use on Hoar.  I'm putting it into
     /home/installer/amber-for-hoar-2020-04-09
     Normally it goes into /programs, but for some reason installer on hoar
     can't write to /programs.  I'm not taking time how to figure out why.
@@ -124,10 +124,24 @@ installer@hoar:~$ which pip
     simple to install/update.  
 
 
-2.  Check the status of these machines:
+3.  Try exporting coordinates for the other three poses, just for 
+    something different for a few minutes.  Gotta upgrade Nanome.
+    It really never ends....  Lol.  It's ok.  I'll be ok...  :-)
 
-    Swift
+    That seems to have worked.  Yay.
 
-    Tolkien
+
+short break...
+
+
+4.  Check the status of these machines:
+
+    Swift  S01 and S02 are up and have usable cards.  
+           The rest have been pressed into web service.
+
+           And no one is running anything on Eliot, so....
+           I'll use that. 
+
+    Tolkien  -  not turned on.
 
 
