@@ -61,3 +61,73 @@ and this documentation.
 Next, I'll start installing AMBER.  While that goes, I'll work on saving
 the coordinates via the Windows VM's Nanome.
 
+4:33 AM
+
+On second thought, I'll do these tasks:
+
+1.  Check calculation speed of jobs recently started on Howard.  Should 
+    be near-ish to 4 ns/day or maybe I need to drop to fewer jobs.
+
+    Right now, at about 2h total run time, they're getting 2.5 ns/day.
+    So, it's not worth killing them.  And, maybe they'll speed up a little.
+
+3.  Start an install of Amber 18 for use on Hoar.  I'm putting it into
+    /home/installer/amber-for-hoar-2020-04-09
+    Normally it goes into /programs, but for some reason installer on hoar
+    can't write to /programs.  I'm not taking time how to figure out why.
+
+    * I had to remove python-pip to get the configure to work.
+
+    * That failed at first because /boot was at 100%.  Sigh.
+
+    I hope I didn't break Hoar.  Need to remember to use autoremove...
+
+
+    AND STILL:
+
+Updating and installing required and optional packages...
+Traceback (most recent call last):
+  File "/home/installer/amber-for-hoar-2020-04-09/miniconda/bin/pip", line 7, in <module>
+    from pip._internal.main import main
+ImportError: No module named _internal.main
+Problem installing Miniconda... see error above.
+Configure failed due to the errors above!
+
+    The problem is:
+
+installer@hoar:~/amber-for-hoar-2020-04-09$ which pip
+/home/installer/.local/bin/pip
+
+    Not gonna think too hard about why someone installed a special version 
+    of pip just for the installer account.  Don't wanna know.
+
+    I used this:
+
+installer@hoar:~$ mv .local dot-local-inactive
+
+    And then:
+
+installer@hoar:~$ which pip
+/usr/local/bin/pip
+
+    Which is, itself, a bit of an annoyance.  But maybe it will work.
+
+    So far, so good.
+
+    ...until a boost-bzip2 issue.  
+
+
+    Giving up for now.   Will fix the Docker image.  That's *much* simpler
+    to do, and needs doing anyway.  I can run docker on Hoar.
+
+    For future head-shakers, this machine is past EoL, so it's not always
+    simple to install/update.  
+
+
+2.  Check the status of these machines:
+
+    Swift
+
+    Tolkien
+
+
