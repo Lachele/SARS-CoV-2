@@ -1,0 +1,21 @@
+5:24 AM
+
+I had to do various tech support - for other folks working on research 
+related to covid-19.  So, I didn't do much more with mine today.
+
+I did check the simulations I started yesterday.  They are going well.
+The lav-ace has stayed in the binding site for ~2.7 ns in a total of
+8 independent simulations (so a little over 20 ns of total time, though
+each sim starts from the same structure).
+
+I will need to update my automation scripts, but that's not hard.
+
+The large files will all be available in relevant directories at:
+
+http://glycam.org/files/2020/SARS-CoV-2/VolatilesBinding/
+
+Eventually, that location might move.  It should at least become an
+encrypted (https) site.  The GitHub repo should point to the most 
+updated location.  
+
+
