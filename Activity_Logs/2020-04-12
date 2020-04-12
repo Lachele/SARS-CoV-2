@@ -1,0 +1,46 @@
+5:25 AM
+
+Yesterday morning, I checked and the lavandulyl acetate had stayed in the
+binding site for over 40 ns total (8 x 5+ ns).  
+
+Then, I got to re-reading and thinking and I should really be focusing on
+linalool and linalyl acetate because they are bigger components.
+
+Rob asked me if I had thought about negative controls.  I wrote him back
+with my thoughts, and, I will start including that info here.  I made a
+new 'Validations' directory.  I'll put info about negative controls and
+other forms of validations there.  The following is what I said to Rob but
+with more detail.  
+
+One form of validation is to see if linalool and/or linalyl acetate bind
+to either the hemagglutinin or the neuraminidase from A/Denver/57.  The 
+volatile components of lavender essential oil were shown not to inhibit 
+these parts of the virion.  So, I could see if either of the two main 
+components of lavender EO will stick in their binding sites in my sims.
+
+That study:  http://www.essencejournal.com/pdf/2014/vol2issue1/PartA/8-565.pdf
+
+I found one structure for the hemagglutinin.  It has antibodies bound to
+it, so I worry about it being the best structure for this job, but it's 
+the only one I can find.  Another study of the neuraminidase produced
+several structures.  I'll have to read the paper to figure out which, if
+any, of those is right. 
+
+Hemagglutinin:  https://www.rcsb.org/structure/6ML8
+
+Set of neuraminidase structures: 
+
+https://www.rcsb.org/search?request=%7B%22query%22%3A%7B%22type%22%3A%22terminal%22%2C%22service%22%3A%22text%22%2C%22parameters%22%3A%7B%22attribute%22%3A%22rcsb_pubmed_container_identifiers.pubmed_id%22%2C%22negation%22%3Afalse%2C%22operator%22%3A%22in%22%2C%22value%22%3A%5B23531861%5D%7D%2C%22node_id%22%3A0%7D%2C%22return_type%22%3A%22entry%22%2C%22request_options%22%3A%7B%22pager%22%3A%7B%22start%22%3A0%2C%22rows%22%3A100%7D%2C%22scoring_strategy%22%3A%22combined%22%2C%22sort%22%3A%5B%7B%22sort_by%22%3A%22score%22%2C%22direction%22%3A%22desc%22%7D%5D%7D%2C%22request_info%22%3A%7B%22src%22%3A%22ui%22%2C%22query_id%22%3A%22a67a53ca2536dd81fef31e8c79f96b8f%22%7D%7D
+
+....my but that's a lengthy URL....
+
+Another form of validation / negative control would be to change the chemical
+structure a little.  For example, with an acetate or an alcohol, I could 
+change the oxygens to be CH3 or CH2 groups, accordingly.  I'm pretty sure 
+the acetate is what the protease is latching onto to hold the lavandulyl 
+acetate in place, so if I get rid of those oxygens, I expect it to let go.
+
+I can set this latter up more quickly than other, so that's what I'll do
+first.  While that's going, I'll read papers about flu.
+
+
