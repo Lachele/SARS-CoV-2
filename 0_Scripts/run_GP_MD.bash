@@ -27,7 +27,11 @@ ReplicaPath="${PosePath}/r_${ReplicaID}"
 InputCoord="${PosePath}/r_1_GP_min3.rst7"
 Restart="${ReplicaPath}_GP_MD.rst7"
 MDOutput="${ReplicaPath}_GP_MD.out"
-Trajectory="${ReplicaPath}_GP_MD.nc"
+if [ "${Use_BIG_for_MD_Traj}" == "true" ] ; then 
+	Trajectory="${ReplicaPath}_GP_MD_BIG.nc"
+else
+	Trajectory="${ReplicaPath}_GP_MD.nc"
+fi
 MDInfo="${ReplicaPath}_GP_MD.info"
 MDLOG="${ReplicaPath}_GP_MD.log"
 if [ -e ../0_Scripts/Build-MD-Exec.bash ] ; then

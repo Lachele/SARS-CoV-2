@@ -11,6 +11,7 @@ GP_MINIMIZATION_MDEngine='sander.MPI'
 GP_PRODUCTION_MDEngine='sander.MPI'
 Sol_MINIMIZATION_MDEngine='pmemd.MPI'
 Sol_PRODUCTION_MDEngine='pmemd.MPI'
+Use_BIG_for_MD_Traj='true'
 
 if [ -e ../0_Scripts/local_settings.bash ] ; then
   . ../0_Scripts/local_settings.bash  ## you can change AMBERHOME in here

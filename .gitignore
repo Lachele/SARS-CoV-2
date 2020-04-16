@@ -1,5 +1,6 @@
 *.swp
 *git-ignore-me*
+*BIG*
 *mdinfo
 
 # file for specifying local amber info

@@ -1,0 +1,147 @@
+2:40 AM
+
+Last night I ran 4 Gas Phase MD jobs simultaneously on the computer called
+Howard at work.  I'll find other computers that aren't likely to be used
+right now and run jobs there, too.  
+
+Last night I also made three more poses for the lavandulyl acetate in the
+6lu7 binding pocket.  
+
+Notes to self:
+	* Fix the ChemDraw lack of numbering BEFORE making any new poses
+	* Install the NVIDIA drivers on Howard so you can use the GPUs
+
+My laptop CPUs are faster than any of the ones at work, but I need to use
+my laptop...  Plus it sometimes shuts off on me for no obvious reason.
+
+Tonight, I've started 8 Gas Phase jobs designed to run for 20 ns each, so
+the total sampled time will be 160 ns, all sampling independent space via
+the ig=-1 directive (I think).  That should take a little under 6 days...
+
+Next up, I'll take a look at the runs from last night to be sure they seem
+to be doing reasonable things.
+
+...did that.
+
+All four of the 1 ns runs from last night show the ligand staying put in the
+binding site.  But, 1 ns isn't enough.  Neither is 4 ns.  And, a couple look
+like the ligand might be trying to escape near the end.  So, we'll have to
+see how it goes.  
+
+I also need to do simulations in water.  Those will take even longer, but
+they can be run on GPU, which will improve things a lot.
+
+So many things to do at once.
+
+The list at the moment, in no particular order:
+
+  * Crank up the Windows VM so that I can save coordinates from the
+    new poses I generated.  
+
+  * Fix the lav-ace in the recent poses to have atom numbers and then 
+    generate the prmtop and inpcrd files that are needed.
+
+  * Write the code to solvate the systems and to run solvated simulations.
+
+  * Install AMBER 18 on 2 or 3 other machines in the lab.
+    For those with GPUs, this might mean updating NVIDIA drivers.
+
+  * Install OpenMPI in our website's Development Environment's Slurm
+    stack.  I realized it was missing when I tried to run sander.MPI from
+    within a Docker container made from the image.
+
+  * Install NVIDIA drivers on Howard so I can use the GPUs there.
+
+  * Make a big list of compounds to consider for binding other than the
+    lavandulyl acetate and eucalyptol already in the works. 
+
+I think the first thing I'll do is commit these first simulation results 
+and this documentation.
+
+Next, I'll start installing AMBER.  While that goes, I'll work on saving
+the coordinates via the Windows VM's Nanome.
+
+4:33 AM
+
+On second thought, I'll do these tasks:
+
+1.  Check calculation speed of jobs recently started on Howard.  Should 
+    be near-ish to 4 ns/day or maybe I need to drop to fewer jobs.
+
+    Right now, at about 2h total run time, they're getting 2.5 ns/day.
+    So, it's not worth killing them.  And, maybe they'll speed up a little.
+
+2.  Start an install of Amber 18 for use on Hoar.  I'm putting it into
+    /home/installer/amber-for-hoar-2020-04-09
+    Normally it goes into /programs, but for some reason installer on hoar
+    can't write to /programs.  I'm not taking time how to figure out why.
+
+    * I had to remove python-pip to get the configure to work.
+
+    * That failed at first because /boot was at 100%.  Sigh.
+
+    I hope I didn't break Hoar.  Need to remember to use autoremove...
+
+
+    AND STILL:
+
+Updating and installing required and optional packages...
+Traceback (most recent call last):
+  File "/home/installer/amber-for-hoar-2020-04-09/miniconda/bin/pip", line 7, in <module>
+    from pip._internal.main import main
+ImportError: No module named _internal.main
+Problem installing Miniconda... see error above.
+Configure failed due to the errors above!
+
+    The problem is:
+
+installer@hoar:~/amber-for-hoar-2020-04-09$ which pip
+/home/installer/.local/bin/pip
+
+    Not gonna think too hard about why someone installed a special version 
+    of pip just for the installer account.  Don't wanna know.
+
+    I used this:
+
+installer@hoar:~$ mv .local dot-local-inactive
+
+    And then:
+
+installer@hoar:~$ which pip
+/usr/local/bin/pip
+
+    Which is, itself, a bit of an annoyance.  But maybe it will work.
+
+    So far, so good.
+
+    ...until a boost-bzip2 issue.  
+
+
+    Giving up for now.   Will fix the Docker image.  That's *much* simpler
+    to do, and needs doing anyway.  I can run docker on Hoar.
+
+    For future head-shakers, this machine is past EoL, so it's not always
+    simple to install/update.  
+
+
+3.  Try exporting coordinates for the other three poses, just for 
+    something different for a few minutes.  Gotta upgrade Nanome.
+    It really never ends....  Lol.  It's ok.  I'll be ok...  :-)
+
+    That seems to have worked.  Yay.
+
+
+short break...
+
+
+4.  Check the status of these machines:
+
+    Swift  S01 and S02 are up and have usable cards.  
+           The rest have been pressed into web service.
+
+           And no one is running anything on Eliot, so....
+           I'll use that. 
+
+    Tolkien  -  not turned on.
+
+
