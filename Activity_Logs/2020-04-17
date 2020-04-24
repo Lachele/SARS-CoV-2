@@ -1,0 +1,40 @@
+1:36 AM
+
+I had other work to do for a couple days and only did a little work on this
+project.  The git repo has a decent record of what I did.
+
+Summary:
+
+* I started trying to run in a docker container, but when I try to run in 
+  parallel, I get error messages for which Google has no hits.  
+
+  More on this below.
+
+* In the process of trying to figure that out, I realized that my restraints
+  weren't being set properly (my mistake).  So, I fixed that and restarted 
+  the simulations.  So far, so good.
+
+* I implemented a way to deal with large trajectory files separately from 
+  the other simulation output.  
+
+
+About the docker/parallel thing:
+
+I get many errors like this:
+
+	[gw-slurm-amber:00058] Read -1, expected 35472, errno = 1
+
+I ran strace on the process and found that this is output from the wait4
+process, which is a process that waits for child processes to complete. 
+
+The run seems to work otherwise.  It just whines constantly while doing it.
+
+
+2:36 AM
+
+I went looking for the problem with parallel runs.  Gave up.  Posted help 
+request to the Docker forums.
+
+Here is the post:  
+
+https://forums.docker.com/t/many-complaints-during-mpi-within-container/92554
