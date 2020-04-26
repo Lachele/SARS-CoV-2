@@ -1,0 +1,97 @@
+1:33 PM
+
+The last week or so, I've been asleep most times, day and night, when I 
+didn't have to be doing something else.  This sometimes happens around
+the new moon, occasionally at other times.  Hence, I am nocturnal: no
+amount of night-time sleep makes me useful, or even necessarily awake, 
+during the day.  About 7 good hours of day-time sleep, and I'm pretty 
+productive at night.  It being the weekend, I gave in and just slept as
+much as I possibly could.  There is usually no other way.
+
+I'm awake enough now that I remember how to do this again.
+
+Today, I am setting up the first foil for pose1 of the 6lu7 + lavandulyl 
+acetate system.  In this foil, which I set up some days or nights ago,
+I substituted similarly hybridized carbons for each of the oxygens.  
+From observing the simulations, it seemed to me that the 6lu7 binding site
+holds tightly onto the acetate part of the molecule.  So, for this first
+foil, I'm changing the acetate part to something with a very similar 
+geometry, but with very different electronic structure.  Specifically, I 
+changed the sp2-hybridized oxygen to a carbon, also with sp2-hybridization 
+(C-H2, actually).  Similarly, I replaced the sp3 -O- with -CH2-.
+
+To make the changes, I used the built-in modification capabilities in
+Nanome.  I simply changed the two oxygens to carbons.  I then added in
+hydrogens as needed.  The hydroxyl already had a carbon, so I only 
+needed to add two hydrogens to each newly-made carbon.  
+
+Nanome didn't add numbers to the new C's or H's, so I'll add those into 
+the file for use by antechamber, tleap, etc.
+
+So, I numbered the new C and H atoms in the ligand file - I simply
+gave them sequentially higher numbers than those that already existed.
+I think I will cause myself confusion later if I try to renumber them
+in some other way.
+
+$ pwd
+/home/lachele/Research/SARS-CoV-2/6_Bound_Coordinates
+$ vim 6lu7.lavace.foil.pose1.combined.pdb
+
+Next, I split the Nanome-written file like so:
+
+$ pwd
+/home/lachele/Research/SARS-CoV-2/7_MD
+$ bash ../0_Scripts/grep_file_parts.bash ../6_Bound_Coordinates/6lu7.lavace.foil.pose1.combined.pdb 6lu7/lav-ace-C-foil/pose1/6lu7-pose1-foil1
+
+Next, I ran antechamber on the ligand to produce a prep file:
+
+$ pwd
+/home/lachele/Research/SARS-CoV-2/7_MD/6lu7/lav-ace-C-foil/pose1
+$ bash ../../../../0_Scripts/use_antechamber.bash  6lu7-pose1-foil1_ligand
+
+
+
+BUT..... it turns out I made one of the C-H bonds just a little too long:
+
+
+
+Welcome to antechamber 17.3: molecular input file processor.
+
+acdoctor mode is on: check and diagnosis problems in the input file.
+-- Check Format for pdb File --
+   Status: pass
+-- Check Unusual Elements --
+   Status: pass
+-- Check Open Valences --
+   Status: pass
+-- Check Geometry --
+      for those bonded   
+Warning: Large distance for BOND	9	C14	H24	0	     1.30  [0.75 - 1.28]
+      for those not bonded   
+Warning: Close ( 1.36) nonbonded atoms (ID: 3, Name: C13) and (ID: 36, Name: H22).
+-- Check Weird Bonds --
+   Status: pass
+-- Check Number of Units --
+/programs/amber-18-with-patches/bin/to_be_dispatched/antechamber: Fatal Error!
+This molecule may have more than one unit.
+       antechamber can only handle one unit.  If the input is a single unit
+       then the connectivity is wrong and the geometry may be bad.
+       Please convert your molecule to a mol2 file via:
+       antechamber -j 5 -at sybyl -dr no 
+       And then check your molecule with a visualization program;
+       manually add missing bonds or delete unwanted bonds as appropriate.
+
+
+
+So, I tried adding a CONECT card to let antechamber know that it's ok.
+
+And... now I get a different complaint because I didn't add CONECT cards for
+all the bonds.  (all or none, apparently...)
+
+
+This is why molecular dynamics is so hard most of the time, especially if you
+want to do anything even a little unusual.
+
+I'm wondering if it might be faster to just fix that one atom in Nanome.
+Probably.  Gonna take a short break and think about it.
+
