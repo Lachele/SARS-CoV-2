@@ -11,8 +11,8 @@ n = loadpdb ligand.pdb
 
 check n
 
-z = combine { m n }
+complex = combine { m n }
 
-saveamberparm z z.parm7 z.rst7
+saveamberparm complex complex.parm7 complex.rst7
 
 quit

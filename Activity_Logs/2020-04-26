@@ -95,3 +95,73 @@ want to do anything even a little unusual.
 I'm wondering if it might be faster to just fix that one atom in Nanome.
 Probably.  Gonna take a short break and think about it.
 
+
+9:44 PM
+
+I decided that it would be faster, and possibly better, to fix it in Nanome.
+That is done.  Now I get to find out if I fixed it.
+
+$ pwd
+/home/lachele/Research/SARS-CoV-2/7_MD
+$ bash ../0_Scripts/grep_file_parts.bash ../6_Bound_Coordinates/6lu7.lavace.foil1.pose1.combined.pdb  6lu7/lav-ace-C-foil/pose1/6lu7-pose1-foil1
+
+Then, to add the atom numbers that Nanome doesn't:
+
+$ pwd
+/home/lachele/Research/SARS-CoV-2/7_MD/6lu7/lav-ace-C-foil/pose1
+$ vim 6lu7-pose1-foil1_ligand.pdb
+
+$ bash ../../../../0_Scripts/use_antechamber.bash  6lu7-pose1-foil1_ligand
+
+Welcome to antechamber 17.3: molecular input file processor.
+
+acdoctor mode is on: check and diagnosis problems in the input file.
+-- Check Format for pdb File --
+   Status: pass
+-- Check Unusual Elements --
+   Status: pass
+-- Check Open Valences --
+   Status: pass
+-- Check Geometry --
+      for those bonded   
+      for those not bonded   
+   Status: pass
+-- Check Weird Bonds --
+   Status: pass
+-- Check Number of Units --
+   Status: pass
+acdoctor mode has completed checking the input file.
+
+Info: Total number of electrons: 108; net charge: 0
+
+Running: /programs/amber-18-with-patches/bin/sqm -O -i sqm.in -o sqm.out
+
+
+
+
+...yay...
+
+
+
+$ ln -s 6lu7-pose1-foil1_ligand.pdb ligand.pdb
+$ ln -s 6lu7-pose1-foil1_ligand.prep ligand.prep
+$ ln -s 6lu7-pose1-foil1_protein.pdb protein.pdb
+
+[made change to the tleap.in]
+
+$ bash ../../../../0_Scripts/run_tleap.bash ../../../sample_leap.in 
+
+
+
+Now, to try the minimizations. Maybe they work.
+
+$ pwd
+/home/lachele/Research/SARS-CoV-2/7_MD
+
+[... take a few minutes to install the parallel version of amber ...]
+
+$ bash ../0_Scripts/run_GP_ALL-MIN.bash 6lu7 lav-ace-C-foil 1 1
+
+
+Now, move it to Howard and get the MD going.
+
