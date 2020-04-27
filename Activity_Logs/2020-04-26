@@ -165,3 +165,21 @@ $ bash ../0_Scripts/run_GP_ALL-MIN.bash 6lu7 lav-ace-C-foil 1 1
 
 Now, move it to Howard and get the MD going.
 
+Done.
+
+
+
+10:55 PM
+
+I need to write in a method for making logs about the simulations.  They
+will likely run on different machines with different versions of AMBER.
+For example, I ran the minimizations for this set here on my laptop, then
+I transferred the files to Howard (a machine in the lab) for the MD.
+
+But, I have other things to do right now, including a few hours nap before
+I start Monday.
+
+The MD jobs on Howard will take a little over 6 days.  I'm sort-of hoping 
+that the molecules all wander out of the binding site before then, but the
+time scale is sort, so they might stay put.
+
