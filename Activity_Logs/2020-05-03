@@ -1,0 +1,34 @@
+12:33 AM
+
+The compound based on lavandulyl acetate, where the oxygens are changed into
+corresponding carbons, stayed in the binding site.  It didn't stay in the same
+part of the binding site, though, and it seems to move around a lot more.  
+
+What does this mean?  Not sure...
+
+I need to decide what to do next.  I think I should run simulations in water, 
+and run simulations for longer. 
+
+The vacuum simulations are slow because they're using sander.  I might try 
+using pmemd with the "vacuum like" implicit solvent method and see if the 
+results are similar.  If so, I could possibly even us GPU for those.
+
+I think I'll at least get some solvated sims going.
+
+
+2:38 AM
+
+I wrote scripts for solvating minimized complexes and generating top and crd
+files for MD input.  
+
+Earlier - before the 12:33 AM entry - I had used ChemDraw to generate linalool
+and linalyl acetate files.  This time, I tried generating PDB files.  Rather 
+than using stars as the residue name, the pdb-style output uses blanks.  There
+must be a way to get better behavior.  In any case, I think I prefer the mol2
+version with the stars - at least there is something to search for.
+
+Next up is deciding how best to minimize the solvated structures.  Since they
+started with a nicely minimized gas phase structure, it should be ok to simply
+minimize the waters and then start the simulation.  But, I'll think on this 
+for a little while.
+
