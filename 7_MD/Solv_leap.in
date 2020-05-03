@@ -1,0 +1,14 @@
+source leaprc.protein.ff14SB
+source leaprc.gaff2
+source leaprc.water.tip3p
+loadamberprep ligand.prep
+
+complex = loadpdb complex_GP_min.pdb
+
+check complex
+
+solvateOct complex TIP3PBOX 12.0 
+
+saveamberparm complex complex_TIP3P.parm7 complex_TIP3P.rst7
+
+quit

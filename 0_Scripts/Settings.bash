@@ -13,8 +13,11 @@ Sol_MINIMIZATION_MDEngine='pmemd.MPI'
 Sol_PRODUCTION_MDEngine='pmemd.MPI'
 Use_BIG_for_MD_Traj='true'
 
-if [ -e ../0_Scripts/local_settings.bash ] ; then
-  . ../0_Scripts/local_settings.bash  ## you can change AMBERHOME in here
+if [ "${BasePath}zzz" == "zzz" ] ; then 
+	BasePath='../0_Scripts'
+fi
+if [ -e ${BasePath}/local_settings.bash ] ; then
+  . ${BasePath}/local_settings.bash  ## you can change AMBERHOME in here
 fi
 
 ## Test that AMBERHOME exists.  The others get tested later, as needed.
