@@ -1,0 +1,3 @@
+trajin wilde_CPU_GP_r_1_MD_BIG.mdcrd 1 last 50
+trajout wilde_CPU_GP_r_1_MD_BIG_skip-50.pdb
+go
