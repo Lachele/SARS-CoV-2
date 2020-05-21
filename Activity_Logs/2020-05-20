@@ -1,0 +1,17 @@
+8:35 AM
+
+I might have mentioned that this is a side-project.  Work became somewhat
+demanding the last few weeks, and there has been little spare time.  I am
+also behind on papers.  
+
+Anyhow, I plan to merge this work and my job by using this work to design 
+an online molecular dynamics service that we've been planning to offer. 
+
+I want to do this because the automation I need for this project was becoming
+a little too complex for comfort in BASH.  So, I'll switch to Python and write 
+it all into the mmservice gemsModule:
+
+https://github.com/GLYCAM-Web/gems/tree/gems-dev/gemsModules
+
+That's the plan anyway.  Wish me luck...  Lol.
+
